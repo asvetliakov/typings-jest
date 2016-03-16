@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "build": "typings bundle -o test --ambient",
+    "test": "ts-node test/test.ts"
+  },
+  "private": true,
+  "devDependencies": {
+    "jest-cli": "^0.9.2",
+    "ts-node": "^0.5.5",
+    "tslint": "^3.5.0",
+    "typescript": "^1.8.7",
+    "typings": "^0.7.5"
+  }
+}
