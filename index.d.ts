@@ -84,6 +84,7 @@ declare namespace Jest {
 	 * Mock API
 	 */
 	interface Mock {
+		(...params: any[]): any;
 		/**
 		 * An array that represents all calls that have been made into this mock function. 
 		 * Each call is represented by an array of arguments that were passed during the call.
