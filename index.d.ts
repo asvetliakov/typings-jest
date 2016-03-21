@@ -28,7 +28,7 @@ declare namespace Jest {
 		/**
 		 * @deprecated
 		 * Same as fn()
-		 */ 
+		 */
 		genMockFunction(): Mock;
 		/**
 		 * Given the name of a module, use the automatic mocking system to generate a mocked version of the module for you.
@@ -72,28 +72,33 @@ declare namespace Jest {
 	interface MockCalls {
 		[key: number]: any[];
 	}
-	
+
 	/**
 	 * Mock instances
 	 */
 	interface MockInstances {
 		[key: number]: any;
 	}
-	
+
 	/**
 	 * Mock API
 	 */
 	interface Mock {
 		(...params: any[]): any;
 		/**
-		 * An array that represents all calls that have been made into this mock function. 
-		 * Each call is represented by an array of arguments that were passed during the call.
+		 * Mock recording stuff
 		 */
-		calls: MockCalls;
-		/**
-		 * An array that contains all the object instances that have been instantiated from this mock function.
-		 */
-		instances: MockInstances;
+		mock: {
+			/**
+			 * An array that represents all calls that have been made into this mock function. 
+			 * Each call is represented by an array of arguments that were passed during the call.
+			 */
+			calls: MockCalls;
+			/**
+			 * An array that contains all the object instances that have been instantiated from this mock function.
+			 */
+			instances: MockInstances;
+		};
 		/**
 		 * Resets all information stored in the mockFn.mock.calls and mockFn.mock.instances arrays.
 		 */
